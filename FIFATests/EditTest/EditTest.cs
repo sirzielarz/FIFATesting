@@ -10,6 +10,7 @@ namespace EditTest
 {
     public class Tests
     {
+        public const int MAX_WAIT_FOR_APPEARANCE=100;
         public IWebDriver driver;
 
         public string url = "https://recruitment.fifatms.com/?desc=test";
@@ -29,9 +30,9 @@ namespace EditTest
             var firstname = "sample";
             var lastname = "sample";
             editPage.insertData(firstname,lastname);
-            new WebDriverWait(driver, TimeSpan.FromMilliseconds(100))
+            new WebDriverWait(driver, TimeSpan.FromMilliseconds(MAX_WAIT_FOR_APPEARANCE))
                 .Until(ExpectedConditions.TextToBePresentInElement(editPage.FirstName, firstname));
-            new WebDriverWait(driver, TimeSpan.FromMilliseconds(100))
+            new WebDriverWait(driver, TimeSpan.FromMilliseconds(MAX_WAIT_FOR_APPEARANCE))
                 .Until(ExpectedConditions.TextToBePresentInElement(editPage.LastName, lastname));
             Assert.That(editPage.FirstName.Text.Equals(firstname));
             Assert.That(editPage.LastName.Text.Equals(lastname));
