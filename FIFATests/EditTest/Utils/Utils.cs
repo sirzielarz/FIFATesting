@@ -5,8 +5,8 @@ namespace EditTest.Utils
 {
     public class Utils
     {
-        private static Random random = new Random();
-        
+        private static readonly Random random = new();
+
         public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

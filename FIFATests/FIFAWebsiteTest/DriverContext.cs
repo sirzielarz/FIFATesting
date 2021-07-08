@@ -2,19 +2,21 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace GoogleTest
+namespace FIFAWebsiteTest
 {
     public class DriverContext : IDisposable
     {
-        private const string baseUrl = "https://www.google.com/";
-
+        private const string baseUrl = "https://www.fifa.com/";
+        
         public DriverContext()
         {
             var options = new ChromeOptions();
             options.AddArgument("no-sandbox");
             options.AddArgument("proxy-server='direct://'");
             options.AddArgument("proxy-bypass-list=*");
-            Driver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory, options, TimeSpan.FromMinutes(3));
+            Driver = new ChromeDriver(AppDomain.
+                CurrentDomain.BaseDirectory,
+                options, TimeSpan.FromMinutes(3));
 
             var setUp = Driver.Manage();
             setUp.Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
