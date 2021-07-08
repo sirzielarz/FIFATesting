@@ -6,8 +6,8 @@ namespace FIFAWebsiteTest
 {
     public class Test : DriverContext
     {
-
         private const string CorrectTitle = "FIFA Women's World Cup™";
+
         [Fact]
         public void Test1()
         {

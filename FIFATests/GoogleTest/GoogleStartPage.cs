@@ -14,8 +14,7 @@ namespace GoogleTest
             PageFactory.InitElements(driver, this);
         }
 
-        [FindsBy(How = How.Name, Using = "q")] 
-        public IWebElement QueryField { get; set; }
+        [FindsBy(How = How.Name, Using = "q")] public IWebElement QueryField { get; set; }
 
         [FindsBy(How = How.Id, Using = "L2AGLb")]
         public IWebElement AcceptCookies { get; set; }

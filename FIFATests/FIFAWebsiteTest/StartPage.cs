@@ -15,16 +15,16 @@ namespace FIFAWebsiteTest
             PageFactory.InitElements(driver, this);
             actions = new Actions(_driver);
         }
-        
-        [FindsBy(How = How.Id, 
+
+        [FindsBy(How = How.Id,
             Using = "onetrust-accept-btn-handler")]
         public IWebElement AcceptCookies { get; set; }
-        
-        [FindsBy(How = How.CssSelector, 
+
+        [FindsBy(How = How.CssSelector,
             Using = ".ff-mb-0[href='/tournaments']")]
         public IWebElement CompetitionsButton { get; set; }
-        
-        [FindsBy(How = How.CssSelector, 
+
+        [FindsBy(How = How.CssSelector,
             Using = ".ff-px-32 .row > li:nth-of-type(1) [href='/tournaments/womens/womensworldcup']")]
         public IWebElement WorldCupButton { get; set; }
 
@@ -35,11 +35,9 @@ namespace FIFAWebsiteTest
 
         public WorldCupPage GoToWomensWorldCupSite()
         {
-           actions.MoveToElement(CompetitionsButton).Perform();
-           WorldCupButton.Click();
-           return new WorldCupPage(_driver); 
+            actions.MoveToElement(CompetitionsButton).Perform();
+            WorldCupButton.Click();
+            return new WorldCupPage(_driver);
         }
-        
-        
     }
 }
